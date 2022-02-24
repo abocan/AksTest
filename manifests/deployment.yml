@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: akstest 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: akstest
+  template:
+    metadata:
+      labels:
+        app: akstest 
+    spec:
+      containers:
+        - name: akstest 
+          image: jimacrtest.azurecr.io/akstest
+          ports:
+          - containerPort: 5000
