@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "akswithapim-5caa"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "akswithapim-5caa"
+  template:
+    metadata:
+      labels:
+        app: "akswithapim-5caa"
+    spec:
+      containers:
+        - name: "akswithapim-5caa"
+          image: "jimacrtest.azurecr.io/akswithapim"
+          ports:
+          - containerPort: 80
