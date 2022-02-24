@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "akswithapim-3511"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "akswithapim-3511"
+  template:
+    metadata:
+      labels:
+        app: "akswithapim-3511"
+    spec:
+      containers:
+        - name: "akswithapim-3511"
+          image: "acrforgithub.azurecr.io/akswithapim"
+          ports:
+          - containerPort: 80
